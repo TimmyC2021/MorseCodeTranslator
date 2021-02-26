@@ -5,25 +5,36 @@ export const translateEnglishToMorse = (input) => {
   //Stub
   console.log('translateEnglishToMorse');
 
+  const inputArr = input.split("");
+  let spacesCount = 0;
   let translation = "";
   let errors = "";
 
-  for (let index=0; index < input.length; index++) {
-    const letter = morse(input.slice(index,index+1).toLowerCase());
-    if (letter !== '*') {
-      if (translation.length > 0) {
-       translation=translation + "   " + letter ;
-      } else {
-        translation = letter;
-      }
+  if (inputArr.len == 1 && inputArr[0] == "") {
+    translation = "";
+    errors = "Empty";
+  } else {
+  inputArr.forEach(englishLetter => {
+    if (englishLetter == " " || englishLetter == "") {
+      // It's a space, increment the counter
+      spacesCount++;
     } else {
-      errors = errors + input.slice(index,index+1);
+      const letter = morse(englishLetter.trim());
+      if (spacesCount > 0) {
+        translation = translation + "       ";
+      }
+      if (letter !== '*') {
+        if (translation.length > 0) {
+        translation=translation + letter ;
+        } else {
+          translation = letter;
+        }
+      } else {
+        errors = errors + englishLetter;
+      }
     }
-  }
-  
   return [translation, errors];
-}
-
+  })}}
 
 export const translateMorseToEnglish = (input) => {
   //Stub
@@ -48,29 +59,31 @@ export const translateMorseToEnglish = (input) => {
     translation = "";
     errors = "Empty";
   } else {
-  inputArr.forEach(morseLetter => {
-    if (morseLetter == " " || morseLetter == "") {
-      // It's a space, increment the counter
-      spacesCount++;
+    inputArr.forEach(morseLetter => {
+      if (morseLetter == " " || morseLetter == "") {
+        // It's a space, increment the counter
+        spacesCount++;
 
-    } else {
-      // it's a character
-      const letter = english(morseLetter.trim());
-      if (spacesCount < 5) {
-        // seperator, reset the counter
-        spacesCount = 0;
-      } else {
-        if (letter == "*") {
-        // Can't translate it
-        errors = errors + '"'+ morseLetter + '"/';
+      } else 
+      {
+        // it's a character
+        const letter = english(morseLetter.trim());
+        if (spacesCount < 5) {
+          // seperator, reset the counter
+          spacesCount = 0;
+        } 
+        else {
+          if (letter == "*") {
+            // Can't translate it
+            errors = errors + '"'+ morseLetter + '"/';
+          }
+          // More than 5 spaces so insert a space and reset the counter
+          translation = translation + " ";
+          spacesCount = 0;
         }
-        // More than 5 spaces so insert a space and reset the counter
-        translation = translation + " ";
-        spacesCount = 0;
+        translation = translation + letter;
       }
-      translation = translation + letter;
-    }
-  });
-  return [translation,errors];
-}
+    })
+  return [translation, errors];
+  }
 }
