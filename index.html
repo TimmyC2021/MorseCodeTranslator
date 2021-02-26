@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="script.js" type="module" async defer></script>
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+
+
+  <title>Morse code and English translator</title>
+</head>
+<body>
+  <header><h1 id="header">Morse code to English translator</h1></header>
+  <main>
+    <div class="main flex-container">
+      <div id="inputDiv">
+        <label for="inputInput" id="labelInput">English</label>
+        <input type="text" id="inputInput">
+      </div>
+      <div id="swapDiv">
+        &uparrow; &downarrow;
+      </div>
+      <div id="translateDiv">
+        <label for="inputTranslation" id="labelTranslation">Morse code</label>
+        <input type="text" id="inputTranslation" readonly>
+      </div>
+      <div id="errDiv">
+        <input type="text"  id="errMessage" readonly>
+      </div>
+      <div id="butDiv">
+        <button id="butTranslate">Translate</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "morsecodetranslator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "translator.js",
+  "type":"module",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.13.0",
+    "jest": "^26.6.3"
+  }
+}

@@ -1,0 +1,50 @@
+* {
+  margin: 5px;
+  padding: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: large;
+}
+
+h1 {
+  width: 100vw;
+  margin: auto;
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  border: 1px solid red;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 5px;
+  border: lightsalmon 5px solid;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#swapDiv:hover {
+  cursor: pointer;
+  background-color: lightsalmon;
+}
+
+#butDiv {
+  text-align: center;
+}
+
+#errMessage {
+  background-color: lightsalmon;
+  visibility: hidden;
+}
+
+#butTranslate {
+  cursor: pointer;
+}
