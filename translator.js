@@ -44,7 +44,7 @@ export const translateMorseToEnglish = (input) => {
   let translation = "";
   let errors = "";
 
-  if (inputArr.len == 1 && inputArr[0] == "") {
+  if (inputArr.len == 1 || inputArr[0] == "") {
     translation = "";
     errors = "Empty";
   } else {

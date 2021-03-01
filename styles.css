@@ -31,6 +31,10 @@ h1 {
   align-items: flex-end;
 }
 
+/* input {
+  width: 500px;
+} */
+
 #swapDiv:hover {
   cursor: pointer;
   background-color: lightsalmon;
